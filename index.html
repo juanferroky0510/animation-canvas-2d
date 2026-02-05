@@ -24,11 +24,23 @@
     </nav>
 
     <!-- Contenido principal -->
-    <main class="container d-flex justify-content-center align-items-center main-container">
-        <div class="canvas-card shadow-lg p-4">
+    <main class="container main-container d-flex flex-column align-items-center">
+
+        <!-- Slider ARRIBA -->
+        <div class="w-75 text-center mt-4">
+            <label for="circleRange" class="form-label fw-bold">
+                Número de círculos: <span id="circleCount">2</span>
+            </label>
+            <input type="range" class="form-range" min="2" max="10" value="2" id="circleRange">
+        </div>
+
+        <!-- Canvas centrado -->
+        <div class="canvas-card shadow-lg p-4 mt-4">
             <canvas id="canvas"></canvas>
         </div>
+
     </main>
+
 
     <!-- Footer -->
     <footer class="text-center py-3 footer">
