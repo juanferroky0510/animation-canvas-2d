@@ -1,0 +1,37 @@
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar elegante */
+.navbar {
+    background-color: #0d1b2a;
+}
+
+/* Contenedor principal centrado */
+.main-container {
+    flex: 1;
+}
+
+/* Tarjeta donde va el canvas */
+.canvas-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+/* Canvas responsivo */
+#canvas {
+    border-radius: 10px;
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    font-size: 14px;
+}
