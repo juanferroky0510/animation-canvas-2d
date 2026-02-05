@@ -23,23 +23,47 @@
         </div>
     </nav>
 
-    <!-- Contenido principal -->
     <main class="container main-container d-flex flex-column align-items-center">
 
-        <!-- Slider ARRIBA -->
-        <div class="w-75 text-center mt-4">
-            <label for="circleRange" class="form-label fw-bold">
-                Número de círculos: <span id="circleCount">2</span>
-            </label>
-            <input type="range" class="form-range" min="2" max="10" value="2" id="circleRange">
+        <!-- Sliders en una sola fila -->
+        <div class="container mt-4">
+            <div class="row text-center align-items-end">
+
+                <!-- Slider círculos -->
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-bold">
+                        Círculos: <span id="circleCount">2</span>
+                    </label>
+                    <input type="range" class="form-range" min="2" max="10" value="2" id="circleRange">
+                </div>
+
+                <!-- Slider ancho -->
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-bold">
+                        Ancho: <span id="widthValue">50</span>%
+                    </label>
+                    <input type="range" class="form-range" min="30" max="70" value="50" id="widthRange">
+                </div>
+
+                <!-- Slider alto -->
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-bold">
+                        Alto: <span id="heightValue">50</span>%
+                    </label>
+                    <input type="range" class="form-range" min="30" max="70" value="50" id="heightRange">
+                </div>
+
+            </div>
         </div>
 
-        <!-- Canvas centrado -->
+
+        <!-- Canvas -->
         <div class="canvas-card shadow-lg p-4 mt-4">
             <canvas id="canvas"></canvas>
         </div>
 
     </main>
+
 
 
     <!-- Footer -->
