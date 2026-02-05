@@ -48,7 +48,6 @@ class Circle {
     this.posX += this.dx;
     this.posY += this.dy;
 
-    // Rebote CORRECTO y reposicionamiento
     if (this.posX + this.radius >= CANVAS_WIDTH) {
       this.posX = CANVAS_WIDTH - this.radius;
       this.dx *= -1;
@@ -73,7 +72,7 @@ class Circle {
   }
 }
 
-// Función para generar posiciones válidas
+// Genera posición válida
 function randomPosition(radius) {
   return {
     x: Math.random() * (CANVAS_WIDTH - 2 * radius) + radius,
@@ -81,23 +80,38 @@ function randomPosition(radius) {
   };
 }
 
-// Crear círculos
-let radius1 = Math.floor(Math.random() * 100 + 30);
-let pos1 = randomPosition(radius1);
+// 🎯 Número aleatorio de círculos (2 a 10)
+const numCircles = Math.floor(Math.random() * 9) + 2;
 
-let miCirculo = new Circle(pos1.x, pos1.y, radius1, "blue", "Tec1", 5);
+// Arreglo de círculos
+let circles = [];
 
-let radius2 = Math.floor(Math.random() * 100 + 30);
-let pos2 = randomPosition(radius2);
+// Crear círculos dinámicamente
+for (let i = 0; i < numCircles; i++) {
+  let radius = Math.floor(Math.random() * 60 + 30);
+  let pos = randomPosition(radius);
+  let speed = Math.random() * 4 + 1;
 
-let miCirculo2 = new Circle(pos2.x, pos2.y, radius2, "red", "Tec2", 2);
+  let circle = new Circle(
+    pos.x,
+    pos.y,
+    radius,
+    "blue",
+    (i + 1).toString(), // Texto 1,2,3,4...
+    speed
+  );
+
+  circles.push(circle);
+}
 
 // Animación
 function updateCircle() {
   requestAnimationFrame(updateCircle);
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  miCirculo.update(ctx);
-  miCirculo2.update(ctx);
+
+  circles.forEach(circle => {
+    circle.update(ctx);
+  });
 }
 
 updateCircle();
